@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
 
-const BlogCard = ({ title, subtitle, description, imageUrl, date, alt }) => (
+const BlogCard = ({ title, description, imageUrl, date, alt }) => (
   <div className={`blog-card ${alt ? 'alt' : ''}`}>
     <div className="meta">
       <div className="photo" style={{ backgroundImage: `url(${imageUrl})` }}></div>
     </div>
     <div className="description">
-      <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      <p>{description}</p>
+      <span className='details'>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </span>
       <p className="read-more">
         <span className='date'>Date: {date}</span>
         <a href="#">Read More</a>
@@ -70,3 +71,4 @@ const App = () => {
 };
 
 export default App;
+
