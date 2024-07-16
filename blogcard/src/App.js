@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 const BlogCard = ({ title, description, imageUrl, date, alt }) => (
@@ -19,40 +19,16 @@ const BlogCard = ({ title, description, imageUrl, date, alt }) => (
   </div>
 );
 
-const blogData = [
-  {
-    "title": "Learning to Code",
-    "subtitle": "Opening a door to the future",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac mattis mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin semper nisi, vestibulum egestas mauris malesuada ac. Quisque ac aliquam mauris, at porttitor neque. Sed sit amet laoreet mauris. Aliquam laoreet interdum ante vitae rutrum.",
-    "imageUrl": "/images_discussion/blak1.jpg",
-    "date": "Jan 1, 2019"
-  },
-  {
-    "title": "Mastering the Language",
-    "subtitle": "Java is not the same as JavaScript",
-    "description": "Phasellus faucibus facilisis sapien, sed interdum sapien placerat in. Aenean magna sapien, condimentum ut mattis ac, congue tempor eros. Integer vel sem a diam pretium pulvinar. Quisque diam erat, consequat at nunc nec, luctus hendrerit ex. Maecenas egestas libero felis, ac interdum ante gravida vitae. Donec efficitur lacus placerat, porttitor enim eu, mattis turpis. Etiam sed mollis nunc.",
-    "imageUrl": "/images_discussion/Flare.jpg",
-    "date": "Jan 1, 2019",
-    "alt": true
-  },
-  {
-    "title": "Learning to Code",
-    "subtitle": "Opening a door to the future",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac mattis mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin semper nisi, vestibulum egestas mauris malesuada ac. Quisque ac aliquam mauris, at porttitor neque. Sed sit amet laoreet mauris. Aliquam laoreet interdum ante vitae rutrum.",
-    "imageUrl": "/images_discussion/planet.jpg",
-    "date": "Jan 1, 2019"
-  },
-  {
-    "title": "Mastering the Language",
-    "subtitle": "Java is not the same as JavaScript",
-    "description": "Phasellus faucibus facilisis sapien, sed interdum sapien placerat in. Aenean magna sapien, condimentum ut mattis ac, congue tempor eros. Integer vel sem a diam pretium pulvinar. Quisque diam erat, consequat at nunc nec, luctus hendrerit ex. Maecenas egestas libero felis, ac interdum ante gravida vitae. Donec efficitur lacus placerat, porttitor enim eu, mattis turpis. Etiam sed mollis nunc.",
-    "imageUrl": "/images_discussion/Meteor.webp",
-    "date": "Jan 1, 2019",
-    "alt": true
-  }
-];
-
 const App = () => {
+  const [blogData, setBlogData] = useState([]);
+
+  useEffect(() => {
+    fetch('/blogData.json')
+      .then(response => response.json())
+      .then(data => setBlogData(data))
+      .catch(error => console.error('Error fetching the blog data:', error));
+  }, []);
+
   return (
     <div className="container">
       {blogData.map((blog, index) => (
