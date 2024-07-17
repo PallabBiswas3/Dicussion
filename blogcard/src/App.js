@@ -35,7 +35,6 @@ const App = () => {
         <BlogCard
           key={index}
           title={blog.title}
-          subtitle={blog.subtitle}
           description={blog.description}
           imageUrl={blog.imageUrl}
           date={blog.date}
