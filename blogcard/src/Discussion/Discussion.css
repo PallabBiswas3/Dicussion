@@ -46,6 +46,8 @@ body {
 .meta {
     position: relative;
     height: 200px;
+    margin: 10px;
+    /* Adding margin around images */
 }
 
 .photo {
@@ -57,6 +59,8 @@ body {
     background-size: cover;
     background-position: center;
     transition: transform 0.3s;
+    border-radius: 10px;
+    /* Adding border-radius for rounded corners */
 }
 
 .blog-card:hover .photo {
@@ -64,7 +68,7 @@ body {
 }
 
 .description {
-    padding: 1.5rem;
+    /* padding: 0.5rem; */
     background: #fff;
 }
 
@@ -98,7 +102,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    padding-top: 1rem;
 }
 
 .date {
@@ -138,7 +142,6 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-
 
     .blog-card.alt {
         flex-direction: row-reverse;
