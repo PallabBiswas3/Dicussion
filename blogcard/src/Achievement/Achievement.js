@@ -1,19 +1,31 @@
 import React, { useState } from 'react';
 import './Achievement.css';
-
-const images = [
-    "https://preview.ibb.co/b43uR8/img01.jpg",
-    "https://preview.ibb.co/ioNAzT/img02.jpg",
-    "https://preview.ibb.co/c9xtKT/img03.jpg",
-    "https://preview.ibb.co/bsYYKT/img04.jpg",
-    "https://preview.ibb.co/bGUjR8/img05.jpg",
-    "https://preview.ibb.co/dxYYKT/img06.jpg",
-    "https://preview.ibb.co/ffBym8/img07.jpg",
-    "https://preview.ibb.co/dXHtKT/img08.jpg",
-    "https://preview.ibb.co/hBiNDo/img09.jpg",
-    "https://preview.ibb.co/gHUvYo/img10.jpg",
-    "https://preview.ibb.co/moKvYo/img11.jpg",
-    "https://preview.ibb.co/diyYKT/img12.jpg"
+const achievements = [
+    {
+        title: "Achievement 1",
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+    },
+    {
+        title: "Achievement 2",
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+    },
+    {
+        title: "Achievement 3",
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+    },
+    {
+        title: "Achievement 4",
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+    },
+    {
+        title: "Achievement 5",
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+    },
+    {
+        title: "Achievement 6",
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+    }
+    // Add more achievements as needed
 ];
 
 const Achievement = () => {
@@ -26,7 +38,7 @@ const Achievement = () => {
     };
 
     const goToNext = () => {
-        if (currentIndex < images.length - 1) {
+        if (currentIndex < achievements.length - 1) {
             setCurrentIndex(currentIndex + 1);
         }
     };
@@ -41,11 +53,20 @@ const Achievement = () => {
                     arrow_back_ios
                 </i>
                 <div className="content">
-                    <img src={images[currentIndex]} alt={`IMG ${currentIndex + 1}`} />
-                    <p>{`IMG ${currentIndex + 1}`}</p>
+                    <div className="card">
+                        <div className="star material-icons">star</div>
+                        <h2>{achievements[currentIndex].title}</h2>
+                        <div className="star material-icons">star</div>
+                        <div className="zebra"></div>
+                        <ul>
+                            {achievements[currentIndex].description.map((desc, index) => (
+                                <li key={index}>{desc}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
                 <i
-                    className={`material-icons arrow forward ${currentIndex === images.length - 1 ? 'dimmed' : ''}`}
+                    className={`material-icons arrow forward ${currentIndex === achievements.length - 1 ? 'dimmed' : ''}`}
                     onClick={goToNext}
                 >
                     arrow_forward_ios

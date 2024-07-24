@@ -1,10 +1,11 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
-* {
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: black;
+    font-family: 'Arial', sans-serif;
 }
 
 li {
@@ -15,13 +16,13 @@ h1 {
     text-align: center;
     padding-top: 2rem;
     font-size: 4rem;
-    color: #111;
+    color: #fff;
 }
 
 .masterBox {
     position: relative;
     width: 90%;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 
 .containerBox {
@@ -38,36 +39,106 @@ h1 {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 80%;
-    height: 20rem;
+    width: 60%;
+    height: 35rem;
     cursor: pointer;
 }
 
-.content img {
-    width: 100%;
-    height: 100%;
-    -webkit-box-shadow: 0px 0px 7.5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 7.5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 7.5px 0px rgba(0, 0, 0, 0.75);
+.card {
+    background-color: black;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px white;
+    padding: 2rem;
+    text-align: center;
+    width: 80%;
+    position: relative;
+    overflow: hidden;
 }
 
-.content p {
-    color: #fff;
+.card h2 {
+    margin: 0 0 1rem;
     font-size: 2rem;
+    color: white;
+    padding: 0.5rem;
+    background-color: #222;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.card .zebra {
+    width: calc(100% + 4rem);
+    /* extend the width to touch the borders */
+    height: 20px;
+    background: repeating-linear-gradient(45deg,
+            #fff,
+            #fff 10px,
+            #000 10px,
+            #000 20px);
+    margin-left: -2rem;
+    /* adjust the margin to align with the card */
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.card ul {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+    list-style: disc inside;
+}
+
+.card::after {
+    content: '';
     position: absolute;
-    background: rgba(0, 0, 0, .5);
-    padding: .5rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+    height: 6rem;
+    background: radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 50%),
+        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    opacity: 0.7;
 }
 
 .arrow {
-    font-size: 4rem;
-    color: #111;
+    font-size: 2rem;
+    color: #fff;
     cursor: pointer;
     user-select: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow:hover {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .arrow.dimmed {
-    color: #ccc;
+    color: #666;
     cursor: not-allowed;
 }
 
@@ -77,4 +148,10 @@ h1 {
 
 .arrow.forward {
     margin-left: 1rem;
+}
+
+.star {
+    font-size: 2.5rem;
+    color: grey;
+    margin: 0 0.5rem;
 }
