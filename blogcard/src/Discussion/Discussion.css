@@ -7,7 +7,6 @@ body {
     font-family: 'Poppins', sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
-    background-color: black;
 }
 
 .container {
@@ -15,6 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    background-color: black;
 }
 
 .blog-card {
@@ -24,7 +24,8 @@ body {
     width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    background: #fff;
+    border: 2px solid #fff;
+    background: black;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -69,7 +70,7 @@ body {
 
 .description {
     /* padding: 0.5rem; */
-    background: #fff;
+    background: black;
 }
 
 .details {
@@ -78,10 +79,16 @@ body {
     align-items: center;
 }
 
-.description h1,
-.description h2 {
+.description h1 {
     margin: 0;
-    color: #333;
+    color: white;
+}
+
+.description h2 {
+    background: grey;
+    /* Adding grey background */
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
 .description h1 {
@@ -92,7 +99,7 @@ body {
 
 .description p {
     margin: 0 0 1rem;
-    color: #666;
+    color: whitesmoke;
     line-height: 1.5;
     font-size: 1rem;
     text-align: center;
@@ -113,15 +120,16 @@ body {
 .read-more a {
     font-size: 0.875rem;
     color: #fff;
-    background: #ff9900;
+    background: #04035f;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transition: background 0.3s;
 }
 
 .read-more a:hover {
-    background: #ffc400;
-    color: #333;
+    background: whitesmoke;
+    box-shadow: #fff;
+    color: black;
 }
 
 @media (min-width: 640px) {

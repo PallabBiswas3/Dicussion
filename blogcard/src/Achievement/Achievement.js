@@ -3,27 +3,27 @@ import './Achievement.css';
 const achievements = [
     {
         title: "Achievement 1",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
     },
     {
         title: "Achievement 2",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
     },
     {
         title: "Achievement 3",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
     },
     {
         title: "Achievement 4",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
     },
     {
         title: "Achievement 5",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
     },
     {
         title: "Achievement 6",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities.", "such as through telemedicine, wearable health devices,"]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
     }
     // Add more achievements as needed
 ];
