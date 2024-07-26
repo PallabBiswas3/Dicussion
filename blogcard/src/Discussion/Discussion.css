@@ -84,13 +84,6 @@ body {
     color: white;
 }
 
-.description h2 {
-    background: grey;
-    /* Adding grey background */
-    padding: 0.5rem;
-    border-radius: 5px;
-}
-
 .description h1 {
     font-size: 1.8rem;
     font-weight: 600;
@@ -132,6 +125,20 @@ body {
     color: black;
 }
 
+@media (max-width: 800px) {
+    .description h1 {
+        font-size: 1.2rem;
+    }
+
+    .description p {
+        font-size: 0.7rem;
+    }
+
+    .read-more {
+        padding-top: 0;
+    }
+}
+
 @media (min-width: 640px) {
     .blog-card {
         flex-direction: row;
@@ -145,10 +152,14 @@ body {
 
     .description {
         flex-basis: 60%;
-        padding: 2rem;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .read-more {
+        padding-top: 0;
     }
 
     .blog-card.alt {
@@ -159,5 +170,17 @@ body {
         left: inherit;
         right: -10px;
         transform: skew(3deg);
+    }
+}
+
+@media (max-width: 640px) {
+    .blog-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 400px) {
+    .blog-card {
+        width: 280px;
     }
 }
