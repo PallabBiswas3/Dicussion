@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
+    overflow-y: auto;
     font-family: 'Arial', sans-serif;
 }
 
@@ -190,7 +191,7 @@ h1 {
     }
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .content {
         width: 90%;
