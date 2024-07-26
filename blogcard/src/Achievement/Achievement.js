@@ -1,45 +1,61 @@
 import React, { useState } from 'react';
 import './Achievement.css';
+
 const achievements = [
     {
         title: "Achievement 1",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
+        image: "/images_discussion/disk1.jpeg" // Add the image path
     },
     {
         title: "Achievement 2",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
+        image: "/images_discussion/disk2.jpeg"
     },
     {
         title: "Achievement 3",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
+        image: "/images_discussion/disk1.jpeg"
     },
     {
         title: "Achievement 4",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
+        image: "/images_discussion/disk2.jpeg"
     },
     {
         title: "Achievement 5",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
+        image: "/images_discussion/disk1.jpeg"
     },
     {
         title: "Achievement 6",
-        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,  ", "and smart home technologies that monitor and assist with daily activities."]
+        description: ["Gerontechnology aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
+        image: "/images_discussion/disk2.jpeg"
     }
     // Add more achievements as needed
 ];
 
 const Achievement = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
 
     const goToPrevious = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
+        if (currentIndex > 0 && !isAnimating) {
+            setIsAnimating(true);
+            setTimeout(() => {
+                setCurrentIndex(currentIndex - 1);
+                setIsAnimating(false);
+            }, 500); // Duration of the animation
         }
     };
 
     const goToNext = () => {
-        if (currentIndex < achievements.length - 1) {
-            setCurrentIndex(currentIndex + 1);
+        if (currentIndex < achievements.length - 1 && !isAnimating) {
+            setIsAnimating(true);
+            setTimeout(() => {
+                setCurrentIndex(currentIndex + 1);
+                setIsAnimating(false);
+            }, 500); // Duration of the animation
         }
     };
 
@@ -52,17 +68,24 @@ const Achievement = () => {
                 >
                     arrow_back_ios
                 </i>
-                <div className="content">
+                <div className={`content ${isAnimating ? 'animating' : ''}`}>
                     <div className="card">
-                        <div className="star material-icons">star</div>
-                        <h2>{achievements[currentIndex].title}</h2>
-                        <div className="star material-icons">star</div>
-                        <div className="zebra"></div>
-                        <ul>
-                            {achievements[currentIndex].description.map((desc, index) => (
-                                <li key={index}>{desc}</li>
-                            ))}
-                        </ul>
+                        <div className="textContainer">
+                            <div className="star material-icons">star</div>
+                            <h2>{achievements[currentIndex].title}</h2>
+                            <div className="star material-icons">star</div>
+                            <div className="zebra"></div>
+                            <div className="descriptionWithImage">
+                                <div className="imageContainer">
+                                    <img src={achievements[currentIndex].image} alt={achievements[currentIndex].title} />
+                                </div>
+                                <ul>
+                                    {achievements[currentIndex].description.map((desc, index) => (
+                                        <li key={index}>{desc}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <i
