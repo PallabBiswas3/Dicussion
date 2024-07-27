@@ -1,42 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Achievement.css';
 
-const achievements = [
-    {
-        title: "Achievement 1",
-        description: ["Gerontech aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
-        image: "/images_discussion/disk1.jpeg" // Add the image path
-    },
-    {
-        title: "Achievement 2",
-        description: ["Gerontech aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
-        image: "/images_discussion/disk2.jpeg"
-    },
-    {
-        title: "Achievement 3",
-        description: ["Gerontech aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
-        image: "/images_discussion/disk1.jpeg"
-    },
-    {
-        title: "Achievement 4",
-        description: ["Gerontech aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
-        image: "/images_discussion/disk2.jpeg"
-    },
-    {
-        title: "Achievement 5",
-        description: ["Gerontech aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
-        image: "/images_discussion/disk1.jpeg"
-    },
-    {
-        title: "Achievement 6",
-        description: ["Gerontech aims to enhance health and healthcare services for the elderly,", "and smart home technologies that monitor and assist with daily activities."],
-        image: "/images_discussion/disk2.jpeg"
-    }
-];
-
 const Achievement = () => {
+    const [achievements, setAchievements] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        fetch('/data.json')
+            .then((response) => response.json())
+            .then((data) => setAchievements(data));
+    }, []);
 
     const goToPrevious = () => {
         if (currentIndex > 0 && !isAnimating) {
@@ -57,6 +31,10 @@ const Achievement = () => {
             }, 500); // Duration of the animation
         }
     };
+
+    if (achievements.length === 0) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="masterBox">
