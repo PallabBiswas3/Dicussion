@@ -5,15 +5,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
-    overflow-y: auto;
     font-family: 'Arial', sans-serif;
 }
 
-li {
-    list-style: none;
-}
 
-h1 {
+
+.textContainer h2 {
     text-align: center;
     padding-top: 2rem;
     font-size: 4rem;
@@ -22,13 +19,12 @@ h1 {
 
 .masterBox {
     position: relative;
-    width: 90%;
-    margin: 2rem auto;
+    width: 100%;
+    margin: 0;
 }
 
 .containerBox {
     position: relative;
-    overflow: hidden;
     width: 100%;
     display: flex;
     align-items: center;
@@ -40,8 +36,7 @@ h1 {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 60%;
-    height: 35rem;
+    width: 80%;
     cursor: pointer;
     transition: transform 0.5s ease-in-out;
 }
@@ -58,7 +53,7 @@ h1 {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -107,7 +102,7 @@ h1 {
 }
 
 .card ul {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: whitesmoke;
     padding-left: 1rem;
     flex: 2;
@@ -226,6 +221,9 @@ h1 {
         font-size: 1.5rem;
     }
 
+    .star {
+        visibility: hidden;
+    }
 }
 
 @media (max-width: 480px) {
